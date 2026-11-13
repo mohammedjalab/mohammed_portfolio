@@ -93,6 +93,19 @@ class PortfolioView extends StatelessComponent {
         'grid-template-columns': 'repeat(auto-fit, minmax(500px, 1fr))',
       },
     ),
+    css.media(.screen(maxWidth: 767.px), [
+      css(".portfolio .projects").styles(
+        display: .grid,
+        // gridTemplate: GridTemplate(
+        //   columns: GridTracks([
+        //     .repeat(.autoFit, [GridTrack(.fr(1))]),
+        //   ]),
+        // ),
+        raw: {
+          'grid-template-columns': '1fr',
+        },
+      ),
+    ]),
   ];
 }
 
@@ -162,7 +175,7 @@ class ProjectCard extends StatelessComponent {
     ),
     css(".project-details p").styles(
       color: Colors.white,
-      fontFamily: FontFamily("Montserrat"),
+      fontFamily: FontFamily("Montserrat Medium"),
       fontSize: 12.px,
       fontWeight: .w500,
     ),

@@ -98,6 +98,12 @@ class DrawerState extends State<Drawer> {
       flexDirection: .column,
       backgroundColor: Colors.black.withOpacity(.4),
     ),
+    css.media(.screen(maxWidth: 577.px), [
+      css(".drawer .drawer-list").styles(
+        position: .absolute(top: 100.percent, right: (-30).px),
+        width: 100.vw,
+      ),
+    ]),
     css(".drawer .drawer-list a").styles(
       display: .block,
       width: 100.percent,

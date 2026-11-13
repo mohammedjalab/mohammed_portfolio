@@ -67,6 +67,7 @@ class ContactView extends StatelessComponent {
     css(".contact .container p").styles(
       margin: .only(bottom: 32.px),
       textAlign: .center,
+      fontFamily: FontFamily("Open Sans Regular"),
     ),
 
     css(".contact form").styles(
@@ -76,6 +77,11 @@ class ContactView extends StatelessComponent {
       alignItems: .center,
       gap: Gap.row(50.px),
     ),
+    css.media(.screen(maxWidth: 1199.px), [
+      css(".contact form").styles(
+        padding: .only(top: 115.px, right: 30.px, left: 30.px),
+      ),
+    ]),
     css(".contact form .txt-field").styles(
       width: 100.percent,
       padding: .all(15.px),

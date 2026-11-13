@@ -72,9 +72,6 @@ class AboutMeAndSkillsView extends StatelessComponent {
       backgroundColor: Colors.white,
       raw: {"background-image": "radial-gradient(rgba(26, 21, 21, 0) 0%, rgba(1, 1, 1, 0.16) 100%)"},
     ),
-    css(".about-skills .container").styles(
-      // padding: .symmetric(horizontal: 150.px),
-    ),
     css(".about-skills .about-me ").styles(
       display: .flex,
       padding: .only(
@@ -87,10 +84,15 @@ class AboutMeAndSkillsView extends StatelessComponent {
     css(".about-skills .about-me p").styles(
       padding: .only(top: 71.px, bottom: 67.px, right: 150.px, left: 150.px),
       textAlign: .center,
-      fontFamily: FontFamily("Open Sans"),
+      fontFamily: FontFamily("Open Sans Regular"),
       fontSize: 15.px,
       fontWeight: .w400,
     ),
+    css.media(.screen(maxWidth: 577.px), [
+      css(".about-skills .about-me p").styles(
+        padding: .only(top: 71.px, bottom: 67.px, right: 15.px, left: 15.px),
+      ),
+    ]),
     css(".about-skills .about-me .text-btn").styles(margin: .only(bottom: 85.px)),
     css(".about-skills .divider").styles(
       width: 170.px,
@@ -138,7 +140,7 @@ class SkillItem extends StatelessComponent {
       display: .block,
       padding: .only(top: 30.px),
       color: Colors.black,
-      fontFamily: FontFamily("Montserrat"),
+      fontFamily: FontFamily("Montserrat Regular"),
       fontSize: 24.px,
       fontWeight: .normal,
       letterSpacing: .1354.em,

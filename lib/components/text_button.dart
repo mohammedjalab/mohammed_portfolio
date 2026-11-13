@@ -46,6 +46,7 @@ class TextButton extends StatelessComponent {
       fontFamily: FontFamily("Montserrat"),
       fontSize: 15.px,
       fontWeight: .w800,
+      textTransform: .upperCase,
     ),
     css(".text-btn:hover").styles(
       color: Color.variable("--btn-bg"),

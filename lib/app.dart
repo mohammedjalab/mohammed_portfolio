@@ -60,6 +60,8 @@ class App extends StatelessComponent {
     css.fontFace(family: "Montserrat", url: "fonts/Montserrat-Medium.ttf"),
     css.fontFace(family: "Montserrat", url: "fonts/Montserrat-SemiBold.ttf"),
     css.fontFace(family: "Montserrat", url: "fonts/Montserrat-Bold.ttf"),
+    css.fontFace(family: "Montserrat Regular", url: "fonts/Montserrat-Regular.ttf"),
+    css.fontFace(family: "Montserrat Medium", url: "fonts/Montserrat-Medium.ttf"),
 
     css.fontFace(family: "Raleway", url: "fonts/Raleway-Regular.ttf"),
     css.fontFace(family: "Raleway", url: "fonts/Raleway-Medium.ttf"),
@@ -72,5 +74,7 @@ class App extends StatelessComponent {
     css.fontFace(family: "Open Sans", url: "fonts/OpenSans-Medium.ttf"),
     css.fontFace(family: "Open Sans", url: "fonts/OpenSans-SemiBold.ttf"),
     css.fontFace(family: "Open Sans", url: "fonts/OpenSans-Bold.ttf"),
+    css.fontFace(family: "Open Sans Regular", url: "fonts/OpenSans-Regular.ttf"),
+    css.fontFace(family: "Open Sans Light", url: "fonts/OpenSans-Light.ttf"),
   ];
 }

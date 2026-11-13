@@ -23,5 +23,11 @@ class Header extends StatelessComponent {
       textTransform: .upperCase,
       letterSpacing: .3554.em,
     ),
+    css.media(.screen(maxWidth: 767.px), [
+      css(".header").styles(
+        padding: .symmetric(horizontal: 20.px, vertical: 16.px),
+        fontSize: 14.px,
+      ),
+    ]),
   ];
 }

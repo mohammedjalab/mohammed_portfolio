@@ -49,7 +49,7 @@ class ServiceCard extends StatelessComponent {
     ).styles(
       color: Colors.black,
       textAlign: .start,
-      fontFamily: FontFamily("Open Sans"),
+      fontFamily: FontFamily("Open Sans Light"),
       fontSize: 14.px,
       fontWeight: .w300,
     ),
