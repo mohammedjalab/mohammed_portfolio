@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base href="/mohammed_portfolio/"/>
+    <meta charset="utf-8"/>
+    <style>
+      body {
+        font-family: 'Montserrat';
+      }
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+      }
+      ul {
+        list-style-type: none;
+      }
+      a {
+        text-decoration: none;
+      }
+    </style>
+    <link href="images/logo.svg" rel="icon" type="image/svg+xml"/>
+    <link href="styles/all.min.css" rel="stylesheet"/>
+    <!--$-->
+    <title>Mohammed Deeb Jalab</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!--/-->
+    <script src="main.client.dart.js" defer></script>
+    <style>
+      html {
+        scrollbar-width: thin;
+        scrollbar-color: #191919 #f3f3f3;
+      }
+      ::-webkit-scrollbar {
+        width: 12px;
+        height: 12px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f3f3f3;
+        border-radius: 999px;
+      }
+      ::-webkit-scrollbar-thumb {
+        border: solid #f3f3f3 2px;
+        border-radius: 10px;
+        background-color: #191919;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background-color: #2d2d2d;
+      }
+      ::-webkit-scrollbar-corner {
+        background: #f3f3f3;
+      }
+      .drawer {
+        display: block;
+        position: relative;
+      }
+      @media screen and (min-width: 1200px) {
+        header .med-screen {
+          display: none;
+        }
+      }
+      .drawer .menu-icon {
+        display: flex;
+        height: 50px;
+        padding: 0;
+        margin: 0;
+        border: none;
+        cursor: pointer;
+        align-items: center;
+        color: white;
+        background-color: transparent;
+        outline: none;
+      }
+      .drawer .drawer-list {
+        display: flex;
+        position: absolute;
+        top: 100%;
+        right: 0px;
+        z-index: 100;
+        width: 400px;
+        border-top-style: solid;
+        border-top-color: white;
+        border-top-width: 1px;
+        flex-direction: column;
+        background-color: rgb(from black r g b / 0.4);
+      }
+      @media screen and (max-width: 577px) {
+        .drawer .drawer-list {
+          position: absolute;
+          top: 100%;
+          right: -30px;
+          width: 100vw;
+        }
+      }
+      .drawer .drawer-list a {
+        display: block;
+        width: 100%;
+        height: 60px;
+        color: white;
+        text-align: center;
+        font-family: 'Montserrat';
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 60px;
+      }
+      .drawer .drawer-list a::before {
+        content: "";
+        position: absolute;
+        left: 0px;
+        bottom: 0px;
+        width: 0px;
+        height: 3px;
+        transition: width 300ms;
+        background-color: white;
+      }
+      .drawer .drawer-list a:hover:not(.reverse-color)::before {
+        width: 100%;
+      }
+      .drawer .drawer-list .reverse-color {
+        transition: width 300ms;
+        color: black;
+        background-color: white;
+      }
+      .drawer .drawer-list .reverse-color {
+        transition: all 300ms;
+        color: black;
+        background-color: white;
+      }
+      .drawer .drawer-list .reverse-color:hover {
+        color: white;
+        background-color: gray;
+      }
+      .header {
+        width: fit-content;
+        padding: 32px 75px;
+        border: solid black 8px;
+        color: black;
+        font-family: 'Montserrat';
+        font-size: 30px;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 0.3554em;
+      }
+      @media screen and (max-width: 767px) {
+        .header {
+          padding: 16px 20px;
+          font-size: 14px;
+        }
+      }
+      .social-link {
+        display: flex;
+        width: 61px;
+        height: 56px;
+        padding: 10px 12px;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        transition: all 300ms;
+        justify-content: center;
+        align-items: center;
+        color: black;
+        background-color: #C4C4C4;
+      }
+      .social-link:hover {
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+        transform: translateY(3px);
+      }
+      .service-card {
+        position: relative;
+        width: 450px;
+        max-width: 100%;
+      }
+      .service-card .icon {
+        position: absolute;
+        top: -25%;
+        left: 0px;
+        height: 64px;
+        opacity: 0.075;
+        transform: translateX(-60%);
+      }
+      .service-card h3 {
+        padding-bottom: 24px;
+        color: black;
+        text-align: start;
+        font-family: 'Montserrat';
+        font-size: 22px;
+        font-weight: bold;
+        text-transform: capitalize;
+        letter-spacing: 0.1854em;
+      }
+      .service-card p {
+        color: black;
+        text-align: start;
+        font-family: 'Open Sans Light';
+        font-size: 14px;
+        font-weight: 300;
+      }
+      .skills {
+        padding-top: 120px;
+        text-align: center;
+      }
+      .text-btn {
+        display: flex;
+        position: relative;
+        z-index: 1;
+        width: 140px;
+        height: 32px;
+        transition: all 400ms;
+        justify-content: center;
+        align-items: center;
+        color: var(--btn-fg);
+        font-family: 'Montserrat';
+        font-size: 15px;
+        font-weight: 800;
+        text-transform: uppercase;
+      }
+      .text-btn:hover {
+        color: var(--btn-bg);
+      }
+      .text-btn::before, .text-btn::after {
+        content: "";
+        z-index: -1;
+        width: 2px;
+        height: 100%;
+        transition: all 200ms;
+        background-color: var(--btn-fg);
+      }
+      .text-btn::before {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+      }
+      .text-btn::after {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+      }
+      .text-btn:hover::before, .text-btn:hover::after {
+        width: 50%;
+      }
+      .about-skills {
+        padding-bottom: 165px;
+        text-align: center;
+        background-color: white;
+        background-image: radial-gradient(rgba(26, 21, 21, 0) 0%, rgba(1, 1, 1, 0.16) 100%);
+      }
+      .about-skills .about-me  {
+        display: flex;
+        padding-top: 142px;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .about-skills .about-me p {
+        padding: 71px 150px 67px 150px;
+        text-align: center;
+        font-family: 'Open Sans Regular';
+        font-size: 15px;
+        font-weight: 400;
+      }
+      @media screen and (max-width: 577px) {
+        .about-skills .about-me p {
+          padding: 71px 15px 67px 15px;
+        }
+      }
+      .about-skills .about-me .text-btn {
+        margin-bottom: 85px;
+      }
+      .about-skills .divider {
+        width: 170px;
+      }
+      .services {
+        display: flex;
+        padding-top: 108px;
+        padding-bottom: 150px;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 65px 120px;
+      }
+      .skills .header {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 80px;
+      }
+      .skills .cards {
+        display: grid;
+        gap: 65px 15px;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      }
+      .skill-card {
+        text-align: center;
+      }
+      .skill-card .icon {
+        height: 100px;
+      }
+      .skill-card .text {
+        display: block;
+        padding-top: 30px;
+        color: black;
+        font-family: 'Montserrat Regular';
+        font-size: 24px;
+        font-weight: normal;
+        letter-spacing: 0.1354em;
+      }
+      .contact {
+        padding-top: 145px;
+        padding-bottom: 70px;
+        text-align: center;
+        background-color: white;
+        background-image: radial-gradient(rgba(26, 21, 21, 0) 0%, rgba(1, 1, 1, 0.16) 100%);
+      }
+      .contact .container .header {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 60px;
+      }
+      .contact .container p {
+        margin-bottom: 32px;
+        text-align: center;
+        font-family: 'Open Sans Regular';
+      }
+      .contact form {
+        display: flex;
+        padding-top: 115px;
+        padding-left: 200px;
+        padding-right: 200px;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 50px;
+      }
+      @media screen and (max-width: 1199px) {
+        .contact form {
+          padding-top: 115px;
+          padding-left: 30px;
+          padding-right: 30px;
+        }
+      }
+      .contact form .txt-field {
+        width: 100%;
+        padding: 15px;
+        box-sizing: border-box;
+        border-left-style: solid;
+        border-top-style: none;
+        border-right-style: none;
+        border-bottom-style: solid;
+        border-left-color: black;
+        border-bottom-color: black;
+        border-left-width: 5px;
+        border-bottom-width: 5px;
+        outline-width: 0px;
+        color: black;
+        font-family: 'Montserrat';
+        font-size: 14px;
+        font-weight: bold;
+        letter-spacing: 0.04em;
+        background-color: transparent;
+      }
+      form .txt-field::placeholder {
+        color: #8B8B8B;
+        font-family: 'Montserrat';
+        font-size: 14px;
+        font-weight: bold;
+        letter-spacing: 0.04em;
+      }
+      form .txt-field:focus::placeholder {
+        color: transparent;
+      }
+      .contact form .txt-field:focus {
+        outline-color: transparent;
+        outline-width: 0px;
+      }
+      .contact form .text-btn {
+        width: 200px;
+        height: 45px;
+      }
+      footer .contact-links a {
+        transition: color 300ms;
+        color: white;
+      }
+      footer .contact-links .email:hover {
+        color: #EA4335;
+      }
+      footer .contact-links .github:hover {
+        color: #24292E;
+      }
+      footer .contact-links .linked-in:hover {
+        color: #0A66C2;
+      }
+      @font-face {
+        font-family: "Montserrat";
+        src: url(fonts/Montserrat-Regular.ttf);
+      }
+      @font-face {
+        font-family: "Montserrat";
+        src: url(fonts/Montserrat-Medium.ttf);
+      }
+      @font-face {
+        font-family: "Montserrat";
+        src: url(fonts/Montserrat-SemiBold.ttf);
+      }
+      @font-face {
+        font-family: "Montserrat";
+        src: url(fonts/Montserrat-Bold.ttf);
+      }
+      @font-face {
+        font-family: "Montserrat Regular";
+        src: url(fonts/Montserrat-Regular.ttf);
+      }
+      @font-face {
+        font-family: "Montserrat Medium";
+        src: url(fonts/Montserrat-Medium.ttf);
+      }
+      @font-face {
+        font-family: "Raleway";
+        src: url(fonts/Raleway-Regular.ttf);
+      }
+      @font-face {
+        font-family: "Raleway";
+        src: url(fonts/Raleway-Medium.ttf);
+      }
+      @font-face {
+        font-family: "Raleway";
+        src: url(fonts/Raleway-SemiBold.ttf);
+      }
+      @font-face {
+        font-family: "Raleway";
+        src: url(fonts/Raleway-Bold.ttf);
+      }
+      @font-face {
+        font-family: "Raleway";
+        src: url(fonts/Raleway-ExtraBold.ttf);
+      }
+      @font-face {
+        font-family: "Open Sans";
+        src: url(fonts/OpenSans-Light.ttf);
+      }
+      @font-face {
+        font-family: "Open Sans";
+        src: url(fonts/OpenSans-Regular.ttf);
+      }
+      @font-face {
+        font-family: "Open Sans";
+        src: url(fonts/OpenSans-Medium.ttf);
+      }
+      @font-face {
+        font-family: "Open Sans";
+        src: url(fonts/OpenSans-SemiBold.ttf);
+      }
+      @font-face {
+        font-family: "Open Sans";
+        src: url(fonts/OpenSans-Bold.ttf);
+      }
+      @font-face {
+        font-family: "Open Sans Regular";
+        src: url(fonts/OpenSans-Regular.ttf);
+      }
+      @font-face {
+        font-family: "Open Sans Light";
+        src: url(fonts/OpenSans-Light.ttf);
+      }
+      .info {
+        position: relative;
+        padding: 50px 100px;
+        overflow: hidden;
+        color: white;
+        background-color: #1e1e1e;
+      }
+      @media screen and (max-width: 577px) {
+        .info {
+          position: relative;
+          padding: 50px 50px;
+        }
+      }
+      .info {
+        flex-grow: 1;
+        text-align: start;
+      }
+      .info .text-btn {
+        margin-left: 0;
+        margin-right: 0;
+      }
+      @media screen and (max-width: 991px) {
+        .info {
+          text-align: center;
+        }
+        .info .text-btn {
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+      .info img {
+        position: absolute;
+        top: -160px;
+        right: 90px;
+        z-index: 0;
+        width: 390px;
+        transform: rotate(24deg);
+      }
+      @media screen and (max-width: 1199px) {
+        .info img {
+          position: absolute;
+          top: -160px;
+          right: 20px;
+        }
+      }
+      @media screen and (max-width: 991px) {
+        .info img {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 300px;
+          transform: rotate(0deg) translate(-50%, -50%);
+        }
+      }
+      .info-text h2 {
+        position: relative;
+        z-index: 1;
+        font-family: 'Montserrat';
+        font-size: 30px;
+        font-weight: bold;
+      }
+      .info-text p {
+        position: relative;
+        z-index: 1;
+        padding-right: 450px;
+        margin-top: 26px;
+        margin-bottom: 26px;
+        font-family: 'Open Sans Regular';
+        font-size: 15px;
+        font-weight: normal;
+      }
+      @media screen and (max-width: 991px) {
+        .info-text p {
+          padding: 0;
+        }
+      }
+      @font-face {
+        font-family: "Montserrat";
+        src: url(fonts/Montserrat-Regular.ttf);
+      }
+      @font-face {
+        font-family: "Montserrat";
+        src: url(fonts/Montserrat-Medium.ttf);
+      }
+      @font-face {
+        font-family: "Montserrat";
+        src: url(fonts/Montserrat-SemiBold.ttf);
+      }
+      @font-face {
+        font-family: "Montserrat";
+        src: url(fonts/Montserrat-Bold.ttf);
+      }
+      @font-face {
+        font-family: "Montserrat Regular";
+        src: url(fonts/Montserrat-Regular.ttf);
+      }
+      @font-face {
+        font-family: "Montserrat Medium";
+        src: url(fonts/Montserrat-Medium.ttf);
+      }
+      @font-face {
+        font-family: "Raleway";
+        src: url(fonts/Raleway-Regular.ttf);
+      }
+      @font-face {
+        font-family: "Raleway";
+        src: url(fonts/Raleway-Medium.ttf);
+      }
+      @font-face {
+        font-family: "Raleway";
+        src: url(fonts/Raleway-SemiBold.ttf);
+      }
+      @font-face {
+        font-family: "Raleway";
+        src: url(fonts/Raleway-Bold.ttf);
+      }
+      @font-face {
+        font-family: "Raleway";
+        src: url(fonts/Raleway-ExtraBold.ttf);
+      }
+      @font-face {
+        font-family: "Open Sans";
+        src: url(fonts/OpenSans-Light.ttf);
+      }
+      @font-face {
+        font-family: "Open Sans";
+        src: url(fonts/OpenSans-Regular.ttf);
+      }
+      @font-face {
+        font-family: "Open Sans";
+        src: url(fonts/OpenSans-Medium.ttf);
+      }
+      @font-face {
+        font-family: "Open Sans";
+        src: url(fonts/OpenSans-SemiBold.ttf);
+      }
+      @font-face {
+        font-family: "Open Sans";
+        src: url(fonts/OpenSans-Bold.ttf);
+      }
+      @font-face {
+        font-family: "Open Sans Regular";
+        src: url(fonts/OpenSans-Regular.ttf);
+      }
+      @font-face {
+        font-family: "Open Sans Light";
+        src: url(fonts/OpenSans-Light.ttf);
+      }
+      .container {
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-left: 10%;
+        margin-right: 10%;
+      }
+      @media screen and (max-width: 768px) {
+        .container {
+          padding-left: 15px;
+          padding-right: 15px;
+          margin-left: 15px;
+          margin-right: 15px;
+        }
+      }
+      .landing {
+        position: relative;
+        height: 100vh;
+        padding-top: 65px;
+        overflow: hidden;
+        background-color: #D7D7D7;
+      }
+      .landing::before {
+        content: "";
+        position: absolute;
+        top: -50px;
+        left: 44%;
+        width: 93%;
+        height: 150%;
+        transform: rotate(9.67deg);
+        background-color: black;
+      }
+      @media screen and (max-width: 1199px) {
+        .landing::before {
+          position: absolute;
+          top: -50px;
+          left: 50%;
+        }
+      }
+      @media screen and (max-width: 991px) {
+        .landing::before {
+          position: absolute;
+          top: 0px;
+          left: 0px;
+          width: 100%;
+          transform: rotate(0deg);
+        }
+      }
+      .landing .container header {
+        display: flex;
+        justify-content: space-between;
+      }
+      header .image {
+        position: relative;
+        height: 50px;
+      }
+      header .image .dark {
+        display: block;
+        height: 100%;
+      }
+      @media screen and (max-width: 991px) {
+        header .image .dark {
+          display: none;
+        }
+      }
+      header .image .light {
+        display: none;
+      }
+      @media screen and (max-width: 991px) {
+        header .image .light {
+          display: block;
+          height: 100%;
+        }
+      }
+      header ul {
+        display: flex;
+        column-gap: 8px;
+      }
+      @media screen and (max-width: 1199px) {
+        header .large-screen {
+          display: none;
+        }
+      }
+      header ul a {
+        display: flex;
+        position: relative;
+        width: 147px;
+        height: 46px;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 17px;
+        font-weight: bold;
+      }
+      header ul a.link::before {
+        content: "";
+        position: absolute;
+        left: 0px;
+        bottom: 0px;
+        width: 0px;
+        height: 3px;
+        transition: width 300ms;
+        background-color: white;
+      }
+      header ul a.link:hover::before {
+        width: 100%;
+      }
+      .btn-shape {
+        border-radius: 23px;
+        transition: all 300ms;
+        color: black;
+        background-color: white;
+      }
+      .btn-shape:hover {
+        color: white;
+        background-color: gray;
+      }
+      .landing-content {
+        display: flex;
+        height: calc(100vh - 115px);
+        max-width: 100vw;
+        padding-top: 30px;
+      }
+      .landing-content > div {
+        flex-grow: 1;
+      }
+      .image-content {
+        width: 850px;
+      }
+      @media screen and (max-width: 991px) {
+        .image-content {
+          text-align: center;
+        }
+      }
+      .image-content img {
+        position: relative;
+        height: calc(100vh - 130px);
+        object-fit: cover;
+      }
+      .text-content {
+        margin-top: auto;
+        margin-bottom: auto;
+        color: black;
+        font-family: 'Raleway';
+      }
+      .text-content .intro-text {
+        padding-bottom: 30px;
+        font-size: 32px;
+        font-weight: bold;
+      }
+      .text-content .name-text {
+        padding-right: 50px;
+        padding-bottom: 10px;
+        font-size: 60px;
+        font-weight: bold;
+      }
+      .text-content .specify-text {
+        padding-bottom: 120px;
+        color: #909090;
+        font-size: 22px;
+        font-weight: 800;
+      }
+      @media screen and (max-width: 991px) {
+        .text-content {
+          display: none;
+        }
+      }
+      .landing-content .social-links {
+        display: flex;
+        column-gap: 32px;
+      }
+      .text-med-content {
+        display: none;
+      }
+      .text-med-content::before {
+        display: none;
+      }
+      @media screen and (max-width: 991px) {
+        .text-med-content {
+          display: flex;
+          position: absolute;
+          left: 0px;
+          bottom: 0px;
+          z-index: 1;
+          width: 100%;
+          padding: 45px 40px;
+          justify-content: space-between;
+          align-items: end;
+        }
+        .text-med-content::before {
+          content: "";
+          display: block;
+          position: absolute;
+          left: -25%;
+          bottom: -50%;
+          z-index: 0;
+          width: 150%;
+          height: 150%;
+          transform: rotate(-8deg);
+          background-color: rgb(from black r g b / 0.55);
+        }
+      }
+      .info-text-content {
+        position: relative;
+      }
+      .social-links-text-content {
+        position: relative;
+      }
+      .info-text-content h4 {
+        color: white;
+        font-family: 'Raleway';
+        font-size: 20px;
+        font-weight: bold;
+      }
+      .info-text-content h2 {
+        padding-bottom: 4px;
+        color: white;
+        font-family: 'Raleway';
+        font-size: 35px;
+        font-weight: bold;
+      }
+      .info-text-content p {
+        padding-bottom: 4px;
+        color: white;
+        font-family: 'Raleway';
+        font-size: 12px;
+        font-weight: 800;
+      }
+      .social-links-text-content {
+        display: flex;
+        flex-direction: column;
+        row-gap: 30px;
+      }
+      .social-links-text-content a {
+        transition: color 300ms;
+        color: white;
+      }
+      .social-links-text-content .email:hover {
+        color: #EA4335;
+      }
+      .social-links-text-content .github:hover {
+        color: #24292E;
+      }
+      .social-links-text-content .linked-in:hover {
+        color: #0A66C2;
+      }
+      .portfolio {
+        text-align: center;
+        background-color: #1A1A1A;
+      }
+      .portfolio .background-header {
+        padding-top: 110px;
+        padding-bottom: 110px;
+        background-image: url(images/mountains.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .portfolio .header {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .portfolio .label {
+        display: inline-block;
+        margin: 32px auto;
+        color: #FFFBFB;
+        font-family: 'Montserrat';
+        font-size: 20px;
+        font-weight: 600;
+      }
+      .label.bottom-border {
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 15px;
+        border-bottom-style: solid;
+        border-bottom-color: white;
+        border-bottom-width: 3px;
+      }
+      .portfolio .projects {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+      }
+      @media screen and (max-width: 767px) {
+        .portfolio .projects {
+          display: grid;
+          grid-template-columns: 1fr;
+        }
+      }
+      .project-card {
+        position: relative;
+        height: 400px;
+        overflow: hidden;
+      }
+      .project-card img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        transition: all 300ms;
+        object-fit: cover;
+      }
+      .project-card:hover img {
+        transform: scale(1.05) rotate(1.5deg);
+      }
+      .project-card .project-details {
+        display: flex;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        padding: 30px;
+        opacity: 0.0;
+        transition: all 300ms;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(from black r g b / 0.8);
+      }
+      .project-card:hover .project-details {
+        opacity: 1.0;
+      }
+      .project-details h4 {
+        margin-bottom: 20px;
+        color: white;
+        font-family: 'Montserrat';
+        font-size: 25px;
+        font-weight: bold;
+      }
+      .project-details p {
+        color: white;
+        font-family: 'Montserrat Medium';
+        font-size: 12px;
+        font-weight: 500;
+      }
+      .links {
+        display: flex;
+        margin-top: 30px;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="top" class="landing">
+      <div class="container">
+        <header>
+          <div class="image">
+            <a href="#top">
+              <img class="dark" alt="Logo" src="images/logo.svg"/>
+              <img class="light" alt="Logo" src="images/logo_light.svg"/>
+            </a>
+          </div>
+          <nav class="large-screen">
+            <ul>
+              <li><a class="link" href="#about">About me</a></li>
+              <li><a class="link" href="#skills">Skills</a></li>
+              <li><a class="link" href="#portfolio">Portfolio</a></li>
+              <li><a class="btn-shape" href="#contact">CONTACT ME</a></li>
+            </ul>
+          </nav>
+          <!--@drawer-->
+          <div class="med-screen drawer"><button class="menu-icon"><i class="fa-solid fa-bars fa-2x"></i></button></div>
+          <!--/@drawer-->
+        </header>
+        <div class="landing-content">
+          <div class="text-content">
+            <div class="intro-text">Hi, I am</div>
+            <div class="name-text">Mohammed Deeb Jalab</div>
+            <div class="specify-text">Flutter &amp; Front-end Developer</div>
+            <div class="social-links">
+              <a class="social-link" target="_blank" rel="noopener noreferrer" href="mailto:jalabmouhamed@gmail.com"><i class="fa-solid fa-at fa-2x"></i></a>
+              <a class="social-link" target="_blank" rel="noopener noreferrer" href="https://github.com/Mohamed-Jalab"><i class="fa-brands fa-github fa-2x"></i></a>
+              <a class="social-link" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/mouhammed-deeb-jalab/"><i class="fa-brands fa-square-linkedin fa-2x"></i></a>
+            </div>
+          </div>
+          <div class="image-content"><img src="images/mohammed.png"/></div>
+          <div class="text-med-content">
+            <div class="info-text-content"><h4>Hi, I am</h4><h2>Mohammed Deeb Jalab</h2><p>Flutter &amp; Front-end Developer</p></div>
+            <div class="social-links-text-content">
+              <a class="social-link-text-content email" target="_blank" rel="noopener noreferrer" href="mailto:jalabmouhamed@gmail.com"><i class="fa-solid fa-at fa-2x"></i></a>
+              <a class="social-link-text-content github" target="_blank" rel="noopener noreferrer" href="https://github.com/Mohamed-Jalab"><i class="fa-brands fa-github fa-2x"></i></a>
+              <a class="social-link-text-content linked-in" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/mouhammed-deeb-jalab"><i class="fa-brands fa-square-linkedin fa-2x"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="info">
+      <div class="info-text">
+        <h2>BUILDING DIGITAL EXPERIENCES</h2>
+        <p>
+          I’m Mohammed, a Flutter and Front-End Developer building scalable applications for mobile and the web. I turn ideas into polished digital products using Flutter, Dart, Jaspr, HTML, CSS, Clean Architecture, and REST APIs, with real-world applications published on Google Play and the App Store.
+        </p>
+      </div>
+      <a class="text-btn" style="--btn-fg: white; --btn-bg: black" target="_blank" rel="noopener noreferrer" href="#about">READ MORE</a>
+      <img src="images/it.svg"/>
+    </div>
+    <div class="about-skills">
+      <div class="container">
+        <div id="about" class="about-me">
+          <div class="header">About Me</div>
+          <p>
+            I’m a software developer focused on building clean, efficient, and user-centered digital experiences. I enjoy turning ideas into practical solutions through thoughtful design, modern technologies, and reliable implementation.
+          </p>
+          <a class="text-btn" style="--btn-fg: black; --btn-bg: white" target="_blank" rel="noopener noreferrer" href="#">Explore</a>
+        </div>
+        <img class="divider" src="images/divider.png"/>
+        <div class="services">
+          <div class="service-card">
+            <img class="icon" alt="Development" src="images/code.svg"/>
+            <h3>Development</h3>
+            <p>
+              I design and build modern, responsive websites tailored to your needs. From planning to final delivery, I focus on clean code, smooth user experience, and results that match your vision.
+            </p>
+          </div>
+          <div class="service-card">
+            <img class="icon" alt="Deployment" src="images/deployment.svg"/>
+            <h3>Deployment</h3>
+            <p>
+              I help launch and deploy your website or application smoothly and reliably, making sure everything is set up correctly for the live environment. From configuration to final release, I focus on performance, stability, and a hassle-free experience.
+            </p>
+          </div>
+          <div class="service-card">
+            <img class="icon" alt="Maintenance" src="images/maintenance.svg"/>
+            <h3>Maintenance</h3>
+            <p>
+              I provide ongoing website maintenance and support to keep your digital presence running smoothly, secure, and up to date. From updates to troubleshooting, I ensure your site stays reliable, efficient, and ready for your audience.
+            </p>
+          </div>
+        </div>
+        <img class="divider" src="images/divider.png"/>
+        <div id="skills" class="skills">
+          <div class="header">Skills</div>
+          <div class="cards">
+            <div class="skill-card"><img class="icon" alt="Flutter" src="images/icons/flutter.svg"/><span class="text">Flutter</span></div>
+            <div class="skill-card"><img class="icon" alt="Dart" src="images/icons/dart.svg"/><span class="text">Dart</span></div>
+            <div class="skill-card"><img class="icon" alt="Jaspr" src="images/icons/jaspr.svg"/><span class="text">Jaspr</span></div>
+            <div class="skill-card"><img class="icon" alt="HTML" src="images/icons/html.svg"/><span class="text">HTML</span></div>
+            <div class="skill-card"><img class="icon" alt="CSS" src="images/icons/css.svg"/><span class="text">CSS</span></div>
+            <div class="skill-card"><img class="icon" alt="Firebase" src="images/icons/firebase.svg"/><span class="text">Firebase</span></div>
+            <div class="skill-card"><img class="icon" alt="Supabase" src="images/icons/supabase.svg"/><span class="text">Supabase</span></div>
+            <div class="skill-card"><img class="icon" alt="Appwrite" src="images/icons/appwrite.svg"/><span class="text">Appwrite</span></div>
+            <div class="skill-card"><img class="icon" alt="Git" src="images/icons/git.svg"/><span class="text">Git</span></div>
+            <div class="skill-card"><img class="icon" alt="MySQL" src="images/icons/mysql.svg"/><span class="text">MySQL</span></div>
+            <div class="skill-card"><img class="icon" alt="Java" src="images/icons/java.svg"/><span class="text">Java</span></div>
+            <div class="skill-card"><img class="icon" alt="C++" src="images/icons/c++.svg"/><span class="text">C++</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="portfolio" class="portfolio">
+      <div class="background-header"><div class="header">portfolio</div></div>
+      <span class="label bottom-border">Experience Projects</span>
+      <div class="projects">
+        <div class="project-card">
+          <img src="images/projects/prime.png"/>
+          <div class="project-details">
+            <h4>Prime</h4>
+            <p>Mobile learning platform for students at Aleppo University.</p>
+            <div class="links">
+              <a class="text-btn" style="--btn-fg: white; --btn-bg: black" target="_blank" rel="noopener noreferrer" href="https://play.google.com/store/apps/details?id=com.brothers.prime">Google Play</a>
+              <a class="text-btn" style="--btn-fg: white; --btn-bg: black" target="_blank" rel="noopener noreferrer" href="https://apps.apple.com/us/app/prime/id6758918919">App Store</a>
+            </div>
+          </div>
+        </div>
+        <div class="project-card">
+          <img src="images/projects/al-nadha.png"/>
+          <div class="project-details">
+            <h4>الندهة ع | Ala Al-Nadha</h4>
+            <p>Multi-service platform for food delivery, grocery shopping, and cleaning services across Aleppo.</p>
+            <div class="links">
+              <a class="text-btn" style="--btn-fg: white; --btn-bg: black" target="_blank" rel="noopener noreferrer" href="https://play.google.com/store/apps/details?id=com.alnadha.app">Google Play</a>
+              <a class="text-btn" style="--btn-fg: white; --btn-bg: black" target="_blank" rel="noopener noreferrer" href="https://apps.apple.com/us/app/%D8%B9-%D8%A7%D9%84%D9%86%D8%AF%D9%87%D8%A9/id6763567929">App Store</a>
+            </div>
+          </div>
+        </div>
+        <div class="project-card">
+          <img src="images/projects/elegance.png"/>
+          <div class="project-details">
+            <h4>Elegance</h4>
+            <p>Open-source Flutter e-commerce application with local caching, and Appwrite backend integration.</p>
+            <div class="links">
+              <a class="text-btn" style="--btn-fg: white; --btn-bg: black" target="_blank" rel="noopener noreferrer" href="https://github.com/Mohamed-Jalab/elegance_shop">GitHub</a>
+            </div>
+          </div>
+        </div>
+        <div class="project-card">
+          <img src="images/projects/drisavo.png"/>
+          <div class="project-details"><h4>Drisavo</h4><p>Driving lesson booking platform for the Canadian market.</p></div>
+        </div>
+        <div class="project-card">
+          <img src="images/projects/prime-bac.png"/>
+          <div class="project-details">
+            <h4>Prime-Bac</h4>
+            <p>Educational platform for Baccalaureate students focused on exam preparation and study organization.</p>
+          </div>
+        </div>
+      </div>
+      <span class="label">And many more to come!</span>
+    </div>
+    <div id="contact" class="contact">
+      <div class="container">
+        <div class="header">Contact</div>
+        <p>
+          I’m available for freelance work, collaborations, and full-time opportunities. Let’s discuss your project, share ideas, and build something impactful together.
+        </p>
+        <img class="divider" src="images/divider.png"/>
+        <form>
+          <input class="txt-field" placeholder="ENTER YOUR NAME*" type="text"/>
+          <input class="txt-field" placeholder="ENTER YOUR EMAIL*" type="email"/>
+          <input class="txt-field" placeholder="PHONE NUMBER" type="tel"/>
+          <textarea class="txt-field" style="height: 180px; resize: none" placeholder="YOUR MESSAGE*" required></textarea>
+          <a class="text-btn" style="--btn-fg: black; --btn-bg: white" target="_blank" rel="noopener noreferrer" href>Submit</a>
+        </form>
+      </div>
+    </div>
+    <footer style="padding-top: 70px; padding-bottom: 70px; text-align: center; background-color: #1A1A1A">
+      <a style="display: block; color: white" href="#top">
+        <i class="fa-solid fa-angles-up" style="display: block; margin-left: auto; margin-right: auto; color: white"></i>
+        <span style="display: block; margin-top: 10px; margin-bottom: 45px; color: white; font-family: 'Montserrat'; font-size: 15px; font-weight: bold; letter-spacing: 0.1854em">BACK TO TOP</span>
+      </a>
+      <div class="contact-links" style="display: flex; padding-bottom: 45px; justify-content: center; gap: 28px">
+        <a class="email" target="_blank" rel="noopener noreferrer" href="mailto:jalabmouhamed@gmail.com"><i class="fa-solid fa-envelope fa-2x"></i></a>
+        <a class="github" target="_blank" rel="noopener noreferrer" href="https://github.com/Mohamed-Jalab"><i class="fa-brands fa-github fa-2x"></i></a>
+        <a class="linked-in" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/mouhammed-deeb-jalab/"><i class="fa-brands fa-square-linkedin fa-2x"></i></a>
+      </div>
+      <span style="display: block; color: white; font-family: 'Montserrat'; font-size: 15px; font-weight: bold">@2026 Mohammed Deeb Jalab, All Rights Reserved.</span>
+    </footer>
+  </body>
+</html>
