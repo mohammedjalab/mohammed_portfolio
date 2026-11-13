@@ -23,6 +23,7 @@ void main() {
   runApp(
     Document(
       title: 'Mohammed Deeb Jalab',
+      base: '/mohammed_portfolio/',
       styles: [
         css('body').styles(fontFamily: FontFamily("Montserrat")),
         css('*').styles(padding: .zero, margin: .zero, boxSizing: .borderBox, raw: {"scroll-behavior": "smooth"}),
@@ -31,7 +32,8 @@ void main() {
       ],
       head: [
         link(rel: "icon", href: "images/logo.svg", type: "image/svg+xml"),
-        link(href: "styles/all.min.css", rel: "stylesheet")],
+        link(href: "styles/all.min.css", rel: "stylesheet"),
+      ],
       body: App(),
     ),
   );
